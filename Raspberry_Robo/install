@@ -1,0 +1,22 @@
+#!/bin/bash
+
+# make directory for user's photo
+
+mkdir data
+
+# move services to the system  dir and enable
+
+systemctl daemon-reload
+
+mv interactionprocessor.service  /etc/systemd/system/
+systemctl start interactionprocessorservice
+systemctl enable interactionprocessor.service
+
+mv soundrecognition.service  /etc/systemd/system/
+systemctl start soundrecognition.service
+systemctl enable soundrecognition.service
+
+mv bluetoothserver.service  /etc/systemd/system/
+systemctl start bluetoothserver.service
+systemctl enable bluetoothserver.service
+

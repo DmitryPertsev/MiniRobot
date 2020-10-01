@@ -1,0 +1,15 @@
+[Unit]
+Description=Raspberry PI Bluetooth Server
+After=bluetooth.target interactionprocessor.service soundrecognition.service
+
+[Service]
+Type=simple
+User=root
+Group=root
+WorkingDirectory=/home/pi/raspberry
+ExecStart=python3 /home/pi/raspberry/BluetoothServer.py
+SyslogIdentifier=Robo.Server
+Restart=always
+
+[Install]
+WantedBy=multi-user.target

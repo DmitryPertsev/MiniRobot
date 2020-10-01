@@ -1,0 +1,21 @@
+#!/bin/bash
+
+systemctl stop bluetoothserver.service
+systemctl stop interactionprocessorservice
+systemctl stop soundrecognition.service
+# remove directory for user's photo and all files
+rm -r data
+
+cd /etc/systemd/system/
+systemctl daemon-reload 
+
+systemctl disable bluetoothserver.service
+rm bluetoothserver.service 
+
+systemctl disable interactionprocessor.service
+rm interactionprocessor.service 
+
+systemctl disable soundrecognition.service
+rm soundrecognition.service
+
+

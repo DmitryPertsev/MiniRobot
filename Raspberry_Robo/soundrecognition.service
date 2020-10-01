@@ -1,0 +1,15 @@
+[Unit]
+Description=Raspberry PI Sound Recognition
+After=bluetooth.target
+
+[Service]
+Type=simple
+User=root
+Group=root
+WorkingDirectory=/home/pi/raspberry
+ExecStart=python3 /home/pi/raspberry/SoundRecognition.py
+SyslogIdentifier=Robo.Sound
+
+
+[Install]
+WantedBy=multi-user.target

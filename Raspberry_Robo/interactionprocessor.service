@@ -1,0 +1,14 @@
+[Unit]
+Description=Raspberry PI Interaction Processor
+After=bluetooth.target
+
+[Service]
+Type=simple
+User=root
+Group=root
+WorkingDirectory=/home/pi/raspberry
+ExecStart=python3 /home/pi/raspberry/InteractionProcessor.py
+SyslogIdentifier=Robo
+
+[Install]
+WantedBy=multi-user.target
