@@ -17,6 +17,7 @@ class SerialIntercommunicator
      boolean read();
      void write(const char * data);
      void write(const byte data);
+     void write(const int data);
 
 private:
     String mCommand;

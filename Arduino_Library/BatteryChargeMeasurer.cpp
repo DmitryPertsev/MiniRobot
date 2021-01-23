@@ -19,7 +19,12 @@ void BatteryChargeMeasurer::init(int voltPin)
 
 float BatteryChargeMeasurer::read() 
 {
-    mVoltage = ((float)analogRead(mVoltPint)) / 1024 * ((R1 + R2) / R2);
+    float temp = (float)analogRead(mVoltPint);
+    Serial.println(temp);
+    mVoltage = ((temp) * 4.4) / 1024;
+    Serial.println(mVoltage);
+    mVoltage = mVoltage  * ((R1 + R2) / R2);
+    Serial.println(mVoltage);
     return mVoltage;
 }
 

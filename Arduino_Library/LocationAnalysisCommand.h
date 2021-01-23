@@ -6,6 +6,14 @@
 #include "InfraSensor.h"
 #include "PhotoSensitiveSensor.h"
 
+//#define ikCenter 18
+//#define ikLeft 19
+//#define ikRight 17
+//#define ikBack 16 
+
+//#define trigPin 2
+//#define echoPin 15
+
 #define ikCenter 14
 #define ikLeft 15
 #define ikRight 16

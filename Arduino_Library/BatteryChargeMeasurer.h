@@ -2,8 +2,8 @@
 #define BatteryChargeSensor_H
 
 #include "Arduino.h"
-#define R1 100000             
-#define R2 51000
+constexpr float R1 = 100000;
+constexpr float R2 = 51000;
 
 class BatteryChargeMeasurer
 {

@@ -24,6 +24,7 @@ void SerialIntercommunicator::run()
     if (read())
     {
         Serial.println("intercomm");
+        Serial.println(mCommand.c_str());
 
         switch (mCommand[0]) {
         case 'v': servoCommand.init(0, mParameter.toInt())->execute(); break;
@@ -41,6 +42,11 @@ void SerialIntercommunicator::run()
         default:
             break;
         }
+    }
+    else
+    {
+        //locationCommand.execute();
+        //write(locationCommand.getResultString());
     }
 }
 
@@ -62,4 +68,9 @@ void SerialIntercommunicator::write(const char * data)
 void SerialIntercommunicator::write(const byte data)
 {
     Serial.write(data);
+}
+
+void SerialIntercommunicator::write(const int data)
+{
+    Serial.print(data);
 }

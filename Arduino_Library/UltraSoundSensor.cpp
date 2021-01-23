@@ -36,8 +36,19 @@ int UltraSoundSensor::read()
     delayMicroseconds(10);
     digitalWrite(mTrigPin, LOW);
     // Reads the echoPin, returns the sound wave travel time in microseconds
-    mDuration = pulseIn(mEchoPin, HIGH);
+    
+    
+    
+    mDuration = pulseIn(mEchoPin, HIGH, 10000);
     // Calculating the distance
-    state = mDuration * 0.034 / 2; // Speed of sound wave divided by 2 (go and back)
+    if (mDuration)
+        state = mDuration * 0.034 / 2; // Speed of sound wave divided by 2 (go and back)
+    else
+        state = 100;
+
+    ////long duration = pulseIn(mEchoPin, HIGH);
+    ////// Calculating the distance
+    ////int state = duration * 0.034 / 2; // Speed of sound wave divided by 2 (go and back)
+
     return state;
 }

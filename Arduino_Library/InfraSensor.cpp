@@ -26,10 +26,10 @@ void InfraSensor::init(int center, int left, int right, int back)
 
 int InfraSensor::read()
 {
-    state = digitalRead(mCenterPin);
-    state += 2 * digitalRead(mLeftPin);
-    state += 4 * digitalRead(mRightPin);
-    state += 8 * digitalRead(mBackPin);
+    state = analogRead(mCenterPin) < 45 ? 1 : 0;
+    state += 2 * (analogRead(mLeftPin) < 45 ? 1 : 0);
+    state += 4 * (analogRead(mRightPin) < 45 ? 1 : 0);
+    state += 8 * (analogRead(mBackPin) < 45 ? 1 : 0);
 
     return state;
 }

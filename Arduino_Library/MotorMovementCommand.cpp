@@ -106,10 +106,10 @@ void MotorMovementCommand::forward()
     motor3.run(FORWARD);
     motor4.run(FORWARD);
 
-    motor1.setSpeed(speed);
-    motor2.setSpeed(speed);
-    motor3.setSpeed(speed);
-    motor4.setSpeed(speed);
+    motor1.setSpeed(speed*2);
+    motor2.setSpeed(speed*2);
+    motor3.setSpeed(speed*2);
+    motor4.setSpeed(speed*2);
 }
 
 void MotorMovementCommand::back() {
@@ -118,34 +118,34 @@ void MotorMovementCommand::back() {
     motor3.run(BACKWARD);
     motor4.run(BACKWARD);
 
-    motor1.setSpeed(speed);
-    motor2.setSpeed(speed);
-    motor3.setSpeed(speed);
-    motor4.setSpeed(speed);
+    motor1.setSpeed(speed*2);
+    motor2.setSpeed(speed*2);
+    motor3.setSpeed(speed*2);
+    motor4.setSpeed(speed*2);
 }
 
 void MotorMovementCommand::left()
-{
-    motor1.run(BACKWARD);
-    motor2.run(BACKWARD);
-    motor3.run(FORWARD);
-    motor4.run(FORWARD);
-
-    motor1.setSpeed(speed);
-    motor2.setSpeed(speed);
-    motor3.setSpeed(speed);
-    motor4.setSpeed(speed);
-}
-
-void MotorMovementCommand::right()
 {
     motor1.run(FORWARD);
     motor2.run(FORWARD);
     motor3.run(BACKWARD);
     motor4.run(BACKWARD);
 
-    motor1.setSpeed(speed);
-    motor2.setSpeed(speed);
-    motor3.setSpeed(speed);
-    motor4.setSpeed(speed);
+    motor1.setSpeed(255);
+    motor2.setSpeed(255);
+    motor3.setSpeed(255);
+    motor4.setSpeed(255);
+}
+
+void MotorMovementCommand::right()
+{
+    motor1.run(BACKWARD);
+    motor2.run(BACKWARD);
+    motor3.run(FORWARD);
+    motor4.run(FORWARD);
+
+    motor1.setSpeed(255);
+    motor2.setSpeed(255);
+    motor3.setSpeed(255);
+    motor4.setSpeed(255);
 }
